@@ -24,9 +24,8 @@ def nmap(ip):
     print("running command for nmap")
     cmd=["nmap","-sV", ip]
     process=subprocess.Popen(cmd,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
-    return process.stdout
-
+    output, error = process.communicate()
+    return output
 
 
 
